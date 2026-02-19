@@ -232,9 +232,28 @@ div > p {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/button.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" class="menu-item">หน้าแรก</a></li>
+            <li><a href="#" class="menu-item" id="active">สินค้า</a></li>
+            <li><a href="#" class="menu-item">เกี่ยวกับเรา</a></li>
+            <li><a href="#" class="menu-item">ติดต่อ</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/73905588-89df-4860-ae33-9d151f444900" />
 
 
 [](#การทดลองที่-3-การจัดการสีและพื้นหลัง)
@@ -338,9 +357,10 @@ background-size: cover;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+(http://127.0.0.1:5500/test.html)
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6f3530e2-d407-4fec-8aa6-40e62cff9201" />
 
 [](#การทดลองที่-4-การจัดการขนาดและระยะห่าง)
 ## การทดลองที่ 4: การจัดการขนาดและระยะห่าง
