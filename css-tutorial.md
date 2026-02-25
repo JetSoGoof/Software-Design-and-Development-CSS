@@ -1137,10 +1137,228 @@ font-weight: bold;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/Lab66.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <h1>แดชบอร์ด</h1>
+            <nav>
+                <button>โปรไฟล์</button>
+                <button>ออกจากระบบ</button>
+            </nav>
+        </header>
+
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li>หน้าแรก</li>
+                    <li>รายงาน</li>
+                    <li>การตั้งค่า</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>ยอดขายรวม</h3>
+                    <p>฿150,000</p>
+                </div>
+                <div class="stat-card">
+                    <h3>จำนวนออเดอร์</h3>
+                    <p>1,234</p>
+                </div>
+                <div class="stat-card">
+                    <h3>ลูกค้าใหม่</h3>
+                    <p>45</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart">
+                    <h3>กราฟแสดงยอดขาย</h3>
+                    <!-- เพิ่มกราฟตามต้องการ -->
+                </div>
+                <div class="chart">
+                    <h3>สัดส่วนสินค้าขายดี</h3>
+                    <!-- เพิ่มกราฟตามต้องการ -->
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+     font-family: 'Segoe UI', Tahoma, sans-serif;
+ }
+
+ body {
+     background: #eef2f7;
+ }
+
+ .dashboard {
+     display: grid;
+     grid-template-areas:
+         "sidebar header"
+         "sidebar main";
+     grid-template-columns: 260px 1fr;
+     grid-template-rows: auto 1fr;
+     min-height: 100vh;
+ }
+
+ /* HEADER */
+ .header {
+     grid-area: header;
+     background: linear-gradient(135deg, #4e73df, #1cc88a);
+     padding: 1rem 2rem;
+     color: white;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .header h1 {
+     font-size: 1.5rem;
+ }
+
+ .header button {
+     background: rgba(255, 255, 255, 0.2);
+     border: none;
+     color: white;
+     padding: 0.5rem 1rem;
+     margin-left: 0.5rem;
+     border-radius: 6px;
+     cursor: pointer;
+     transition: 0.3s;
+ }
+
+ .header button:hover {
+     background: white;
+     color: #4e73df;
+ }
+
+ /* SIDEBAR */
+ .sidebar {
+     grid-area: sidebar;
+     background: #1f2937;
+     color: white;
+     padding: 2rem 1rem;
+ }
+
+ .sidebar ul {
+     list-style: none;
+ }
+
+ .sidebar li {
+     padding: 0.8rem 1rem;
+     border-radius: 6px;
+     margin-bottom: 0.5rem;
+     cursor: pointer;
+     transition: 0.3s;
+ }
+
+ .sidebar li:hover {
+     background: #374151;
+ }
+
+ .sidebar li.active {
+     background: #4e73df;
+ }
+
+ /* MAIN */
+ .main-content {
+     grid-area: main;
+     padding: 2rem;
+ }
+
+ /* STATS */
+ .stats-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 1.5rem;
+     margin-bottom: 2rem;
+ }
+
+ .stat-card {
+     background: white;
+     padding: 1.5rem;
+     border-radius: 12px;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+     transition: 0.3s;
+ }
+
+ .stat-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+ }
+
+ .stat-card h3 {
+     font-size: 1rem;
+     color: #6b7280;
+     margin-bottom: 0.5rem;
+ }
+
+ .stat-card p {
+     font-size: 1.8rem;
+     font-weight: bold;
+     color: #111827;
+ }
+
+ /* CHART SECTION */
+ .chart-container {
+     display: grid;
+     grid-template-columns: 2fr 1fr;
+     gap: 1.5rem;
+ }
+
+ .chart {
+     background: white;
+     padding: 1.5rem;
+     border-radius: 12px;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+     transition: 0.3s;
+ }
+
+ .chart:hover {
+     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+ }
+
+ .chart h3 {
+     margin-bottom: 1rem;
+     color: #374151;
+ }
+
+ /* RESPONSIVE */
+ @media (max-width: 768px) {
+     .dashboard {
+         grid-template-areas:
+             "header"
+             "main";
+         grid-template-columns: 1fr;
+     }
+
+     .sidebar {
+         display: none;
+     }
+
+     .chart-container {
+         grid-template-columns: 1fr;
+     }
+ }
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
 
+<img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/8ca63f11-6f3a-4bcd-91b2-30c19a58ab0b" />
